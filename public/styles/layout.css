@@ -24,7 +24,10 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
- span{
-   
- }
+ .main_container {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #f4f1ec;
+}

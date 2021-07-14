@@ -14,12 +14,13 @@ nav {
   font-size:        20px;
 }
 
-nav i {
+nav div i {
   color:          white;
-  text-align:     
+  text-align:     center
   font-size:      24px;
+
+
   z-index:          2;
-  
   }
 
 nav div {

@@ -3,14 +3,14 @@ header {
   width:            100%;
   
   align-items:      center;
-  background-color: blueviolet;
+  background-color: slateblue;
   position:         relative;
   display:          flex;
   flex-direction:   column;
   justify-content:  center;
     
   /* align-items:baseline; */
-    background-color: #008c41;
+    
     background-image: url("https://pbs.twimg.com/media/E3X47tdXIAA5Sfc?format=jpg&name=4096x4096");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */;
     
