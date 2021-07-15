@@ -54,16 +54,16 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="main_container">
-    <p>What are you humming about?</p>
-    <h1>Test tweet</h1>
+  <main class="container">
     <section class="new-tweet">
+      <h4 class="empty-tweet-err">Error, You can't send an empty tweet!</h4>
+      <h4 class="long-tweet-err">Tweet message is too long! 140 characters limit, try again.</h4>
+
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+      <form Content-Type='application/x-www-form-urlencoded' method='POST' action='/tweets/' id='tweet-form'>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
-          <button type="submit">Tweet</button>
+          <button class="btn" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
