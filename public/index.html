@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta Information -->
-  <title>Tweeter</title>
+  <title>Tweeter - Home Page</title>
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -25,6 +25,10 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
 
+  <!-- time ago link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -33,19 +37,22 @@
   <nav>
     <span>Tweeter</span>
     <div>
-      <i class="new-tweet"><strong>Write </strong> a new tweet</i>
+      <!-- <i class="new-tweet"><strong>Write </strong> a new tweet</i> -->
+      <a><strong>Write</strong> a new tweet</a>
       <i class="fas fa-angle-double-down"></i>
     </div>
   </nav>
+
   <header>
-    <div>
+    <div class="avatar">
       <img src="/images/profile-hex.png">
     </div>
     <br>
-    <div>
-      <h2>Your Name</h2>
+    <div class="name">
+      <h2>Amy Mansell</h2>
     </div>
   </header>
+
   <!-- Page-specific (main) content here -->
   <main class="main_container">
     <p>What are you humming about?</p>
@@ -60,6 +67,11 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+
+    <section>
+      <article></article>
+
     </section>
 
   </main>
