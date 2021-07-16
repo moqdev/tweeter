@@ -18,3 +18,10 @@ This repository is the starter code for the project: Students will fork and clon
 - body-parser 1.15.2 or above
 - chance
 
+## Final Product
+
+!["Screenshot of URLs page"](https://raw.githubusercontent.com/moqdev/tweeter/master/docs/Tweeter%20Main%20Page.png)
+
+!["Screenshot of mobile view"](https://raw.githubusercontent.com/moqdev/tweeter/master/docs/mobile%20view.png)
+
+
