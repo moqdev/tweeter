@@ -62,23 +62,3 @@ header h2 {
   margin-top: -1em;
   color: #fff;
 } 
-.container {
-  -ms-grid-column: 2;
-  grid-column-start: 2;
-  grid-column-end: 2;
-  -ms-grid-row: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-flex: 1.5;
-  -ms-flex: 1.5;
-  flex: 1.5;
-  margin-top: 4em;
-}

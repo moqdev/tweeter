@@ -1,0 +1,470 @@
+@import "helper/variables";
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $bodyColour;
+  background-color: $bodyBG;
+  font-size: 24px;
+  font-family: $Source;
+  height: 100%;
+  // width: 100vw;
+  display: flex;
+}
+
+/*
+ * Global layout stuff
+ */
+
+@media only screen and (min-width: 1025px) {
+  body {
+    // display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 4.16em 30% 30% 20%;
+    column-gap: 1em;
+    row-gap: 1em;
+  }
+
+  /*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+  nav {
+    //parent container
+    background-color: $navback;
+    color: $white;
+    height: 8rem;
+    width: 100%;
+    font-size: 5rem; /*1rem = 16px*/
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    position: fixed;
+    z-index: 10;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      align-self: center;
+      justify-self: flex-start;
+      float: left;
+      clear: right;
+      font-family: $bungee;
+      line-height: 1em;
+      order: 1;
+      flex-grow: 3;
+    }
+    a {
+      order: 2;
+      font-size: 0.5em;
+      float: right;
+      margin-right: -3em;
+    }
+    .fas {
+      order: 3;
+      color: $red;
+
+      font-size: 0.5em;
+      margin-top: 2em;
+      //-webkit-transform: rotate(45deg);
+    }
+    .fas:before {
+      position: absolute;
+      left: 89%;
+      margin-top: -0.6em;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: arrow;
+    }
+    @keyframes arrow {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-10px, -10px);
+      }
+    }
+  }
+
+  //header
+  // |->div class="avatar"
+  // |->div class="name"
+  header {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: $orange;
+    flex: 1;
+    margin-top: 4em;
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: column;
+
+    /* flex-wrap: nowrap; */
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      top: 10%;
+      margin-top: 8em;
+      justify-content: center;
+      margin-left: 5em;
+
+      img {
+        margin-top: -6em;
+        margin-left: -3em;
+      }
+    }
+    h2 {
+      margin-left: 1em;
+      margin-top: -1em;
+      color: $white;
+    }
+  }
+
+  .container {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1.5;
+    margin-top: 4em;
+
+    .new-tweet {
+      width: 80%;
+      h4 {
+        color: $red;
+        font-size: 1em;
+        margin-top: 1em;
+        display: none;
+      }
+      h2 {
+        font-size: 4em;
+        display: none;
+      }
+      #tweet-form {
+        margin-top: 4em;
+
+        #tweet-text {
+          width: 80%;
+          height: 50%;
+          overflow-wrap: break-word;
+        }
+        .btn {
+          background-color: $buttonColor;
+          font-family: $bungee;
+          color: $white;
+          margin: 0.5em;
+          float: left;
+        }
+        .counter {
+          font-family: $bungee;
+          margin-right: 5.5em;
+          float: right;
+        }
+      }
+    }
+
+    .tweets {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      .tweet-container {
+        border: 2px black solid;
+        margin-top: 1em;
+      
+
+        .useravatar {
+          margin: 0.5em;
+          // flex-direction: row;
+
+          p {
+            float: left;
+            //order: 1;
+          }
+          .username {
+            //order: 2;
+            margin: 0.5em;
+          }
+
+          .handle {
+            float: right;
+          }
+        }
+        .tweetcontent {
+          // align-self: baseline;
+          margin-top: 5em;
+        }
+        .date-flags-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .datecreated {
+            margin: 0.5em;
+          }
+
+          .flags-container {
+            display: flex;
+            flex-direction: row;
+            margin: 0.5em;
+          }
+
+          p {
+            margin: 0.1em;
+            :hover {
+              color: $hoverColor;
+            }
+          }
+
+          p {
+            margin: 0.1em;
+            :hover {
+              color: $hoverColor;
+            }
+          }
+
+          p {
+            margin: 0.1em;
+            :hover {
+              color: $hoverColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* Write Tablet only CSS here */
+  body {
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: 10% 30% 20% 40%;
+  }
+  //nav
+  // |->span
+  // |->a
+  // |->i class ='fas'
+  nav {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background-color: $orange;
+    span {
+      font-size: 2em;
+      flex-grow: 2;
+      order: 1;
+      margin: 0.5em;
+      font-family: $bungee;
+      color: $white;
+    }
+    a {
+      order: 2;
+      margin-right: -4em;
+      float: right;
+      font-family: $Source;
+      color: $white;
+    }
+    .fas {
+      order: 3;
+      margin-top: 2em;
+      margin-right: 4em;
+      color: $red;
+    }
+    .fas:before {
+      position: absolute;
+      left: 89%;
+      margin-top: -0.6em;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: arrow;
+    }
+    @keyframes arrow {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-10px, -10px);
+      }
+    }
+  }
+  //header
+  // |->div class="avatar"
+  // |->div class="name"
+  header {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $orange;
+    h2 {
+      color: $white;
+    }
+  }
+  .container {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-left: 5em;
+
+    .new-tweet {
+      h4 {
+        display: none;
+        color: red;
+        font-size: 0.8em;
+        text-align: center;
+      }
+      h2 {
+        display: none;
+      }
+      #tweet-form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 20em;
+
+        #tweet-text {
+          width: 100%;
+          margin: 0.5em;
+          overflow-wrap: break-word;
+        }
+        div {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-content: center;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+
+          .btn {
+            color: $white;
+            font-family: $bungee;
+            background-color: $buttonColor;
+          }
+          .counter {
+            font-family: $bungee;
+          }
+        }
+      }
+    }
+    //article class
+    .tweets {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .tweet-container {
+        border: 2px black solid;
+        margin: 0.5em;
+        width: 80%;
+        // transition: box-shadow .3s;
+        // :hover {
+        //   box-shadow: 0 0 11px rgba(33,33,33,.2);
+        // }
+
+        .useravatar {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          margin: 0.5em;
+          .username {
+            margin-left: -13em;
+            margin-top: 1.5em;
+          }
+        }
+        .tweetcontent {
+          margin: 0.5em;
+        }
+        hr {
+          color: black;
+          border-bottom: 2px;
+          border-block-style: solid;
+        }
+        .date-flags-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-content: center;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0.5em;
+
+          .flags-container {
+            display: flex;
+            flex-direction: row;
+
+            .like {
+              margin: 0.2em;
+              :hover {
+                color: $hoverColor;
+              }
+            }
+            .retweet {
+              margin: 0.2em;
+              :hover {
+                color: $hoverColor;
+              }
+            }
+            .flag {
+              margin: 0.2em;
+              :hover {
+                color: $hoverColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tweet-container :hover {
+  transition: box-shadow 0.3s;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}

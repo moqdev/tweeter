@@ -3,11 +3,13 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-*, *:before, 
+
+*,
+*:before,
 *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
@@ -17,16 +19,17 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+
 /*
  * Global layout stuff
  */
- /* @media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1025px) {
   body {
     -ms-grid-columns: 40% 60%;
     grid-template-columns: 40% 60%;
@@ -35,23 +38,612 @@ body {
     -webkit-column-gap: 1em;
     column-gap: 1em;
     row-gap: 1em;
-  } */
-/*
+  }
+  /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- .main_container {
-  width: 90%;
-  margin: auto;
-  padding: 10px;
-  text-align: center;
-  background-color: #f4f1ec;
+  /****
+ * desktop styles
+ ***/
+  nav {
+    background-color: #4056a1;
+    color: #fff;
+    height: 100px;
+    width: 100%;
+    font-size: 5rem;
+    /*1rem = 16px*/
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    position: fixed;
+    z-index: 10;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  nav span {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    justify-self: flex-start;
+    float: left;
+    clear: right;
+    font-family: "Bungee", sans-serif;
+    line-height: 1em;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-box-flex: 3;
+    -ms-flex-positive: 3;
+    flex-grow: 3;
+  }
+  nav a {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    font-size: 0.5em;
+    float: right;
+    margin-right: -2.5em;
+  }
+  nav .fas {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+    color: #ed3d33;
+    font-size: 0.5em;
+    margin-top: 2em;
+  }
+  nav .fas:before {
+    position: absolute;
+    left: 89%;
+    margin-top: -0.6em;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: arrow;
+    animation-name: arrow;
+  }
+  @-webkit-keyframes arrow {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translate(-10px, -10px);
+      transform: translate(-10px, -10px);
+    }
+  }
+  @keyframes arrow {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translate(-10px, -10px);
+      transform: translate(-10px, -10px);
+    }
+  }
+  header {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: #d89939;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-top: 4em;
+    margin-left: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    /* align-content: center; */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  header .avatar {
+    top: 10%;
+    margin-top: 8em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 5em;
+  }
+  header .avatar img {
+    margin-top: -6em;
+    margin-left: -3em;
+  }
+  header h2 {
+    margin-left: 1em;
+    margin-top: -1em;
+    color: #fff;
+  }
+  .container {
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1.5;
+    -ms-flex: 1.5;
+    flex: 1.5;
+    margin-top: 4em;
+  }
+  .container .new-tweet {
+    width: 80%;
+  }
+  .container .new-tweet h4 {
+    color: #ed3d33;
+    font-size: 1em;
+    margin-top: 1em;
+    display: none;
+  }
+  .container .new-tweet h2 {
+    font-size: 4em;
+    display: none;
+  }
+  .container .new-tweet #tweet-form {
+    margin-top: 4em;
+  }
+  .container .new-tweet #tweet-form #tweet-text {
+    width: 80%;
+    height: 50%;
+    overflow-wrap: break-word;
+  }
+  .container .new-tweet #tweet-form .btn {
+    background-color: #4152a1;
+    font-family: "Bungee", sans-serif;
+    color: #fff;
+    margin: 0.5em;
+    float: left;
+  }
+  .container .new-tweet #tweet-form .counter {
+    font-family: "Bungee", sans-serif;
+    margin-right: 5.5em;
+    float: right;
+  }
+  .container .tweets {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+  .container .tweets .tweet-container {
+    border: 2px black solid;
+    margin-top: 1em;
+  }
+  .container .tweets .tweet-container .useravatar {
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container .useravatar p {
+    float: left;
+  }
+  .container .tweets .tweet-container .useravatar .username {
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container .useravatar .handle {
+    float: right;
+  }
+  .container .tweets .tweet-container .tweetcontent {
+    margin-top: 5em;
+  }
+  .container .tweets .tweet-container .date-flags-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .container .tweets .tweet-container .date-flags-container .datecreated {
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container .date-flags-container .flags-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container .date-flags-container p {
+    margin: 0.1em;
+  }
+  .container .tweets .tweet-container .date-flags-container p :hover {
+    color: #ca9825;
+  }
+  .container .tweets .tweet-container .date-flags-container p {
+    margin: 0.1em;
+  }
+  .container .tweets .tweet-container .date-flags-container p :hover {
+    color: #ca9825;
+  }
+  .container .tweets .tweet-container .date-flags-container p {
+    margin: 0.1em;
+  }
+  .container .tweets .tweet-container .date-flags-container p :hover {
+    color: #ca9825;
+  }
 }
 
-
-
-
-
-
+@media only screen and (max-width: 1024px) {
+  /* Write Tablet only CSS here */
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-grid-rows: 10% 30% 20% 40%;
+    grid-template-rows: 10% 30% 20% 40%;
+  }
+  nav {
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #d89939;
+  }
+  nav span {
+    font-size: 2em;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    margin: 0.5em;
+    font-family: "Bungee", sans-serif;
+    color: #fff;
+  }
+  nav a {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-right: -4em;
+    float: right;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #fff;
+  }
+  nav .fas {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+    margin-top: 2em;
+    margin-right: 4em;
+    color: #ed3d33;
+  }
+  nav .fas:before {
+    position: absolute;
+    left: 89%;
+    margin-top: -0.6em;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: arrow;
+    animation-name: arrow;
+  }
+  @-webkit-keyframes arrow {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translate(-10px, -10px);
+      transform: translate(-10px, -10px);
+    }
+  }
+  @keyframes arrow {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translate(-10px, -10px);
+      transform: translate(-10px, -10px);
+    }
+  }
+  header {
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #d89939;
+  }
+  header h2 {
+    color: #fff;
+  }
+  .container {
+    -ms-grid-row: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-left: 5em;
+  }
+  .container .new-tweet h4 {
+    display: none;
+    color: red;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  .container .new-tweet h2 {
+    display: none;
+  }
+  .container .new-tweet #tweet-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 20em;
+  }
+  .container .new-tweet #tweet-form #tweet-text {
+    width: 100%;
+    margin: 0.5em;
+    overflow-wrap: break-word;
+  }
+  .container .new-tweet #tweet-form div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .container .new-tweet #tweet-form div .btn {
+    color: #fff;
+    font-family: "Bungee", sans-serif;
+    background-color: #4152a1;
+  }
+  .container .new-tweet #tweet-form div .counter {
+    font-family: "Bungee", sans-serif;
+  }
+  .container .tweets {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+  }
+  .container .tweets .tweet-container {
+    border: 2px black solid;
+    margin: 0.5em;
+    width: 80%;
+  }
+  .container .tweets .tweet-container .useravatar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container .useravatar .username {
+    margin-left: -13em;
+    margin-top: 1.5em;
+  }
+  .container .tweets .tweet-container .tweetcontent {
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container hr {
+    color: black;
+    border-bottom: 2px;
+    border-block-style: solid;
+  }
+  .container .tweets .tweet-container .date-flags-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0.5em;
+  }
+  .container .tweets .tweet-container .date-flags-container .flags-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .container
+    .tweets
+    .tweet-container
+    .date-flags-container
+    .flags-container
+    .like {
+    margin: 0.2em;
+  }
+  .container
+    .tweets
+    .tweet-container
+    .date-flags-container
+    .flags-container
+    .like
+    :hover {
+    color: #ca9825;
+  }
+  .container
+    .tweets
+    .tweet-container
+    .date-flags-container
+    .flags-container
+    .retweet {
+    margin: 0.2em;
+  }
+  .container
+    .tweets
+    .tweet-container
+    .date-flags-container
+    .flags-container
+    .retweet
+    :hover {
+    color: #ca9825;
+  }
+  .container
+    .tweets
+    .tweet-container
+    .date-flags-container
+    .flags-container
+    .flag {
+    margin: 0.2em;
+  }
+  .container
+    .tweets
+    .tweet-container
+    .date-flags-container
+    .flags-container
+    .flag
+    :hover {
+    color: #ca9825;
+  }
+}
 
 .tweet-container :hover {
   -webkit-transition: -webkit-box-shadow 0.3s;
@@ -61,3 +653,4 @@ body {
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
+/*# sourceMappingURL=layout.css.map */
