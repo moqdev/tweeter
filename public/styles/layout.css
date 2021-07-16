@@ -4,23 +4,38 @@
  * Do not modify these two selectors, please
  */
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*, *:before, 
+*:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Bungee';
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
+/*
+ * Global layout stuff
+ */
+ /* @media only screen and (min-width: 1025px) {
+  body {
+    -ms-grid-columns: 40% 60%;
+    grid-template-columns: 40% 60%;
+    -ms-grid-rows: 4.16em 30% 30% 20%;
+    grid-template-rows: 4.16em 30% 30% 20%;
+    -webkit-column-gap: 1em;
+    column-gap: 1em;
+    row-gap: 1em;
+  } */
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -30,4 +45,19 @@ body {
   padding: 10px;
   text-align: center;
   background-color: #f4f1ec;
+}
+
+
+
+
+
+
+
+.tweet-container :hover {
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
